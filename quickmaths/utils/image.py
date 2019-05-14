@@ -16,21 +16,23 @@ def thresify(gray, dk, ek):
 
     thresh = cv2.erode(thresh, np.ones((ek, ek)))
 
+    kernel2 = cv2.getStructuringElement(shape=cv2.MORPH_CROSS, ksize=(1, 5))
+
     return thresh
 
 
-def warp(thresh, im):
-    cnts = cv2.findContours(thresh.copy(), cv2.RETR_LIST,
-                            cv2.CHAIN_APPROX_SIMPLE)
-    cnts = cnts[0] if imutils.is_cv2() else cnts[1]
-    cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:5]
-    screenCnt = None
-    for c in cnts:
-        peri = cv2.arcLength(c, True)
-        approx = cv2.approxPolyDP(c, 0.02 * peri, True)
-        if len(approx) == 4:
-            screenCnt = approx
-            break
+# def warp(thresh, im):
+#     cnts = cv2.findContours(thresh.copy(), cv2.RETR_LIST,
+#                             cv2.CHAIN_APPROX_SIMPLE)
+#     cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+#     cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:5]
+#     screenCnt = None
+#     for c in cnts:
+#         peri = cv2.arcLength(c, True)
+#         approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+#         if len(approx) == 4:
+#             screenCnt = approx
+#             break
 
     # cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
 

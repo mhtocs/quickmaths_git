@@ -4,6 +4,8 @@ from imutils.video import WebcamVideoStream, FPS
 from quickmaths.utils.window import Mouse, Graphics
 from quickmaths.utils import image as im
 from quickmaths.utils import component
+from vidstab.VidStab import VidStab
+
 
 import cv2
 import time
@@ -31,6 +33,8 @@ class App:
         self.font_20 = ImageFont.truetype(f'{self.ROOT_DIR}/fonts/raleway/Raleway-Light.ttf', 20)
         self.font_30 = ImageFont.truetype(f'{self.ROOT_DIR}/fonts/raleway/Raleway-Light.ttf', 30)
 
+        self.stabilizer = VidStab()
+
     def run(self):
         self.vs.start()
         self.fps.start()
@@ -45,16 +49,19 @@ class App:
             frame = self.vs.read()
             # frame = frame[:, ::-1]  # flip
             orig = frame.copy()
+            # stabilized_frame = self.stabilizer.stabilize_frame(
+            #     input_frame=frame, smoothing_window=30, border_size=50)
+
             if self.mouse.rect:
                 p1, p2 = self.mouse.rect
                 roi = self.gt.draw_roi(orig, p1, p2)
                 if roi.size != 0:
+
                     gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
 
                     dk = cv2.getTrackbarPos("dilate kernel", "roi")
                     ek = cv2.getTrackbarPos("erode kernel", "roi")
                     thresh = im.thresify(gray_roi, dk, ek)
-                    im.warp(thresh, roi)
                     # boxes, digits, cnts = component.get_symbols(
                     #     thresh, im=roi, draw_contours=True)
 
@@ -75,6 +82,7 @@ class App:
                 self.gt.write(orig, self.msg, (100, wh / 2 - 30), self.font_30)
 
             cv2.imshow('Webcam', orig)
+            # cv2.imshow('stab', stabilized_frame)
             self.fps.update()
 
             key = cv2.waitKey(1)

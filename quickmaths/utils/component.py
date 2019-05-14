@@ -65,7 +65,7 @@ def get_symbols(thresh, im=None, draw_contours=False):
 
 
 def get_cnts(thresh):
-    thresh, cnts, _ = cv2.findContours(
+    cnts, _ = cv2.findContours(
         thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     avgCntArea = np.mean([cv2.contourArea(k) for k in cnts])
 
@@ -81,7 +81,7 @@ def get_cnts(thresh):
 
     # clean
     for i, c in enumerate(cnts):
-        approx = cv2.approxPolyDP(c, 0.08 * cv2.arcLength(c, True), True)
+        approx = cv2.approxPolyDP(c, 0.1 * cv2.arcLength(c, True), True)
 
         if cv2.contourArea(c) < avgCntArea / 15:
             continue
@@ -111,14 +111,14 @@ def iseqmark(bb1, bb2, shape1, shape2):
     x1, y1, w1, h1 = bb1
     x2, y2, w2, h2 = bb2
 
-    return shape1 == 'h' and shape2 == 'h' and abs(x1 - x2) < 30 and abs((x1 + w1) - (x2 + w2)) < 30 and abs((y1 + h1) - y2) <= avgHeight
+    return shape1 == 'h' and shape2 == 'h' and abs(x1 - x2) < 50 and abs((x1 + w1) - (x2 + w2)) < 50 and abs((y1 + h1) - y2) <= avgHeight
 
 
 def isdiv(bb1, bb2, bb3, shape1, shape2, shape3):
     x1, y1, w1, h1 = bb1
     x2, y2, w2, h2 = bb2
     x3, y3, w3, h3 = bb3
-    return shape1 == 'h' and shape2 == 'c' and shape3 == 'c' and (x1 < x2 < x3 < x1 + w1) and max(y2, y3) > y1 and min(y2, y3) < y1 and max(y2, y3) - min(y2, y3) < 1.2 * abs((x1 + w1) - x1)
+    return shape1 == 'h' and shape2 == 'c' and shape3 == 'c' and (x1 < x2 < x3 < x1 + w1) and max(y2, y3) > y1 and min(y2, y3) < y1 and max(y2, y3) - min(y2, y3) < 2.2 * abs((x1 + w1) - x1)
 
 
 def isfraction(bb1, bb2, bb3, shape1, shape2, shape3):
@@ -139,7 +139,10 @@ def isfraction(bb1, bb2, bb3, shape1, shape2, shape3):
     case3 = shape2 != 'c' and shape3 != 'c' and shape1 == 'h' and (
         y2 < y1 < (y3 + h3) or y3 < y1 < (y2 + h2))
 
-    return (case1 or case2 or case3) and max(cenX1, cenX2, cenX3) - min(cenX1, cenX2, cenX3) < 50
+    case4 = shape2 != 'c' and shape3 != 'c' and shape1 == 'h' and (
+        (y2 < y1 and y3 < y1) or (y1 < y2 and y1 < y2))
+
+    return (case1 or case2 or case3 or case4) and max(cenX1, cenX2, cenX3) - min(cenX1, cenX2, cenX3) < 30
 
 
 def connect_cnts2(thresh, im):
@@ -147,7 +150,13 @@ def connect_cnts2(thresh, im):
     i = 0
     digits = []
     while i < len(bbs) - 1:
+        font = cv2.FONT_HERSHEY_SIMPLEX
+
         x1, y1, w1, h1 = bbs[i]
+        cv2.putText(im, shapes[i], (x1, y1), font, 1,
+
+                    (255, 255, 255), 1, cv2.LINE_AA)
+
         x2, y2, w2, h2 = bbs[i + 1]
         equation = iseqmark(bbs[i], bbs[i + 1], shapes[i], shapes[i + 1])
         fraction = False
@@ -157,7 +166,6 @@ def connect_cnts2(thresh, im):
             x3, y3, w3, h3 = bbs[i + 2]
             div = isdiv(bbs[i], bbs[i + 1], bbs[i + 2],
                         shapes[i], shapes[i + 1], shapes[i + 2])
-
             fraction = isfraction(
                 bbs[i], bbs[i + 1], bbs[i + 2], shapes[i], shapes[i + 1], shapes[i + 2])
 
