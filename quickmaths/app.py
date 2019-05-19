@@ -4,7 +4,7 @@ from imutils.video import WebcamVideoStream, FPS
 from quickmaths.utils.window import Mouse, Graphics
 from quickmaths.utils import image as im
 from quickmaths.utils import component
-from vidstab.VidStab import VidStab
+# from vidstab.VidStab import VidStab
 
 
 import cv2
@@ -33,7 +33,7 @@ class App:
         self.font_20 = ImageFont.truetype(f'{self.ROOT_DIR}/fonts/raleway/Raleway-Light.ttf', 20)
         self.font_30 = ImageFont.truetype(f'{self.ROOT_DIR}/fonts/raleway/Raleway-Light.ttf', 30)
 
-        self.stabilizer = VidStab()
+        # self.stabilizer = VidStab()
 
     def run(self):
         self.vs.start()
@@ -66,7 +66,7 @@ class App:
                     #     thresh, im=roi, draw_contours=True)
 
                     digits = component.connect_cnts2(thresh, roi)
-                    # print(type(digits[0]))
+
                     stacked_digits = component.stack_digits(digits, im.resize)
                     # self.gt.draw_boxes(orig, boxes, p1, p2)
 

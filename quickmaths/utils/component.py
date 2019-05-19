@@ -65,7 +65,7 @@ def get_symbols(thresh, im=None, draw_contours=False):
 
 
 def get_cnts(thresh):
-    cnts, _ = cv2.findContours(
+    _,cnts, _ = cv2.findContours(
         thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     avgCntArea = np.mean([cv2.contourArea(k) for k in cnts])
 
@@ -94,9 +94,9 @@ def get_cnts(thresh):
                                 np.square(cv2.arcLength(c, True)))
 
         shape = 'p'
-        if 0.7 < circular < 1.2:
+        if 0.6 < circular < 1.2:
             shape = 'c'
-        elif len(approx) == 2 and ar > 1:
+        elif len(approx) == 2 and ar > 0.5:
             shape = 'h'
         elif len(approx) == 2 and ar < 1:
             shape = 'v'
@@ -111,7 +111,7 @@ def iseqmark(bb1, bb2, shape1, shape2):
     x1, y1, w1, h1 = bb1
     x2, y2, w2, h2 = bb2
 
-    return shape1 == 'h' and shape2 == 'h' and abs(x1 - x2) < 50 and abs((x1 + w1) - (x2 + w2)) < 50 and abs((y1 + h1) - y2) <= avgHeight
+    return shape1 == 'h' and shape2 == 'h' and abs(x1 - x2) < 50 and abs((x1 + w1) - (x2 + w2)) < 50 and abs((y1 + h1) - (y2 + h2)) < 50
 
 
 def isdiv(bb1, bb2, bb3, shape1, shape2, shape3):
@@ -191,6 +191,7 @@ def connect_cnts2(thresh, im):
             mask = np.zeros(thresh.shape, dtype="uint8")
             cv2.drawContours(
                 mask, [cnts[i], cnts[i + 1], cnts[i + 2]], -1, 255, -1)
+
             mask = cv2.bitwise_and(thresh, thresh, mask=mask)
             x_min = min(x1, x2, x3)
             y_min = min(y1, y2, y3)
@@ -198,7 +199,7 @@ def connect_cnts2(thresh, im):
             x_max = max(x1 + w1, x2 + w2, x3 + w3)
             y_max = max(y1 + h1, y2 + h2, y3 + h3)
 
-            cv2.imshow('div_mask', mask)
+            # cv2.imshow('div_mask', mask)
             digit = mask[y_min - 8:y_max + 8, x_min - 8:x_max + 8]
             cv2.rectangle(im, (x_min - 8, y_min - 8),
                           (x_max + 8, y_max + 8), (255, 0, 0), 1)
@@ -213,6 +214,7 @@ def connect_cnts2(thresh, im):
             mask = cv2.bitwise_and(thresh, thresh, mask=mask)
             digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
             digits.append(digit)
+
             i += 1
 
     while i < len(bbs):
@@ -222,6 +224,7 @@ def connect_cnts2(thresh, im):
         mask = cv2.bitwise_and(thresh, thresh, mask=mask)
         digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
         digits.append(digit)
+
         i += 1
 
     return digits
@@ -298,10 +301,11 @@ def connect_cnts(thresh, im):
 
 def stack_digits(digits, resize_f):
     stacked = np.zeros([28, 28], dtype=np.uint8)
-    for d in digits:
+    for i, d in enumerate(digits):
         if d.size == 0:
             continue
         d = resize_f(d)
+        cv2.imshow('d', d)
 
         stacked = np.concatenate((stacked, d), axis=1)
     return stacked

@@ -16,8 +16,6 @@ def thresify(gray, dk, ek):
 
     thresh = cv2.erode(thresh, np.ones((ek, ek)))
 
-    kernel2 = cv2.getStructuringElement(shape=cv2.MORPH_CROSS, ksize=(1, 5))
-
     return thresh
 
 

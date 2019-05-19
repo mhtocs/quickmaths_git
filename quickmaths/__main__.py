@@ -27,12 +27,12 @@ ap.add_argument("-n", "--num-frames", type=int, default=100,
                 help="# of frames to loop over for FPS test")
 ap.add_argument("-d", "--display", type=int, default=-1,
                 help="Whether or not frames should be displayed")
-ap.add_argument("-c", "--camera", type=int, default=0,
+ap.add_argument("-c", "--camera", type=int, default=1,
                 help="Which camera to use")
 
 args = vars(ap.parse_args())
 
-if args["camera"] == 1:
+if args["camera"] == 0:
     args["camera"] = "http://192.168.43.1:8080/video"
 app = App(logger, args["camera"], ROOT_DIR)
 app.run()
