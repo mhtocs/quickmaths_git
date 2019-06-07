@@ -13,8 +13,8 @@ def thresify(gray, dk, ek):
     thresh = cv2.GaussianBlur(thresh, (1, 1), cv2.BORDER_DEFAULT)
 
     thresh = cv2.dilate(thresh, np.ones((dk, dk)))
-
-    thresh = cv2.erode(thresh, np.ones((ek, ek)))
+    if ek != 0:
+        thresh = cv2.erode(thresh, np.ones((ek, ek)))
 
     return thresh
 

@@ -127,7 +127,7 @@ class Graphics:
 
         # return img
 
-    def write(self, image, text, pos, font=None):
+    def write(self, image, text, pos, font=None, color="#ff0000"):
         text_to_show = text
         x, y = pos
         # Convert the image to RGB (OpenCV uses BGR)
@@ -140,7 +140,7 @@ class Graphics:
         # use a truetype font
 
         # Draw the text
-        draw.text((x, y), text_to_show, font=font)
+        draw.text((x, y), text_to_show, font=font, fill=color)
 
         # Get back the image to OpenCV
         cv2_im_processed = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)

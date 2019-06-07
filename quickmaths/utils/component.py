@@ -65,7 +65,7 @@ def get_symbols(thresh, im=None, draw_contours=False):
 
 
 def get_cnts(thresh):
-    _,cnts, _ = cv2.findContours(
+    _, cnts, _ = cv2.findContours(
         thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     avgCntArea = np.mean([cv2.contourArea(k) for k in cnts])
 
@@ -149,14 +149,13 @@ def connect_cnts2(thresh, im):
     cnts, bbs, shapes = get_cnts(thresh)
     i = 0
     digits = []
+    boxes = []
     while i < len(bbs) - 1:
         font = cv2.FONT_HERSHEY_SIMPLEX
 
         x1, y1, w1, h1 = bbs[i]
-        cv2.putText(im, shapes[i], (x1, y1), font, 1,
-
-                    (255, 255, 255), 1, cv2.LINE_AA)
-
+        # cv2.putText(im, shapes[i], (x1, y1), font, 1,
+        #             (255, 255, 255), 1, cv2.LINE_AA)
         x2, y2, w2, h2 = bbs[i + 1]
         equation = iseqmark(bbs[i], bbs[i + 1], shapes[i], shapes[i + 1])
         fraction = False
@@ -180,11 +179,14 @@ def connect_cnts2(thresh, im):
             x_max = max(x1 + w1, x2 + w1)
             y_max = max(y1 + h1, y2 + h2)
 
+            cv2.rectangle(im, (x_min, y_min), (x_max, y_max), (255, 0, 0), 1)
+
             # cv2.imshow('eq_mask', mask)
             digit = mask[y_min - 8:y_max + 8, x_min - 8:x_max + 8]
             # cv2.rectangle(im, (x_min - 8, y_min - 8),
             #               (x_max + 8, y_max + 8), (255, 0, 0), 1)
             digits.append(digit)
+            boxes.append(("=", x_min, y_min, x_max, y_max))
             i += 2
 
         elif div and not fraction:
@@ -205,6 +207,7 @@ def connect_cnts2(thresh, im):
                           (x_max + 8, y_max + 8), (255, 0, 0), 1)
 
             digits.append(digit)
+            boxes.append(("/", x_min, y_min, x_max, y_max))
             i += 3
 
         else:
@@ -214,6 +217,8 @@ def connect_cnts2(thresh, im):
             mask = cv2.bitwise_and(thresh, thresh, mask=mask)
             digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
             digits.append(digit)
+            boxes.append(("", x, y, x + w, y + h))
+            cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
 
             i += 1
 
@@ -224,10 +229,12 @@ def connect_cnts2(thresh, im):
         mask = cv2.bitwise_and(thresh, thresh, mask=mask)
         digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
         digits.append(digit)
+        boxes.append(("", x, y, x + w, y + h))
+        cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
 
         i += 1
 
-    return digits
+    return digits, boxes
 
 
 def connect_cnts(thresh, im):
@@ -278,7 +285,7 @@ def connect_cnts(thresh, im):
                 x_max = max(x1 + w1, x2 + w2, x3 + w3)
                 y_max = max(y1 + h1, y2 + h2, y3 + h3)
 
-                cv2.imshow('div_mask', mask)
+                # cv2.imshow('div_mask', mask)
                 digit = mask[y_min - 8:y_max + 8, x_min - 8:x_max + 8]
                 cv2.rectangle(im, (x_min - 8, y_min - 8),
                               (x_max + 8, y_max + 8), (255, 0, 0), 1)
@@ -301,14 +308,16 @@ def connect_cnts(thresh, im):
 
 def stack_digits(digits, resize_f):
     stacked = np.zeros([28, 28], dtype=np.uint8)
+    resized_digits = []
     for i, d in enumerate(digits):
         if d.size == 0:
             continue
         d = resize_f(d)
-        cv2.imshow('d', d)
-
+        # cv2.imshow('d', d)
+        resized_digits.append(d)
         stacked = np.concatenate((stacked, d), axis=1)
-    return stacked
+    resized_digits = np.array(resized_digits)
+    return stacked, resized_digits
 
 
 def sort_contours(cnts, method="left-to-right"):

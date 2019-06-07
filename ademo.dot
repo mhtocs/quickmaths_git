@@ -1,0 +1,4 @@
+strict digraph  {
+	"7th Edition" -> "32V";
+	"7th Edition" -> Xenix;
+}

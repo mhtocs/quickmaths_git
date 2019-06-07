@@ -1,0 +1,67 @@
+#!/bin/bash
+
+# Script to generate TeX from .dat format expression and symbol list.
+# This assumes that DRAC_DIR, the root directory of the DRACULAE source
+# code, is already defined in the environment.
+
+# First argument is either "-help", or the filename.
+# The remaining arguments are passed as arguments to DRACULAE.
+
+function help () { 
+	echo "DRACULAE - dat2tex (GetTeX.Txl)"
+	echo "Copyright (c) 2000,2002 Richard Zanibbi"
+	echo ""
+	echo "Command line options: "
+	echo ""
+	echo "      -help     (show this message)"
+	echo ""
+	echo "      -bleft    (input file has origin at bottom left) "
+	echo "      -thresholdRatio <0.0 - 0.5>     (set ratio for region thresholds)"
+	echo "      -centroidRatio  <0.0 - 0.5>     (set ratio for centroid Y position)"
+	echo ""
+	echo "      -intDir <dir>    (set directory for intermediate output)"
+	echo "      -intFile <fileName>     (set intermediate file name)"
+	echo ""
+	echo "Usage:"
+	echo "    dat2tex -help (to see this message) OR"
+	echo "    dat2tex <.dat file> <Options>"
+	echo ""
+	exit 0
+}
+
+args=""
+a=0
+for argument
+do
+	if [ $a != 0 ]
+	then
+		args="$args $argument"
+	fi
+	a=$argument
+	if [ $a = "-help" ] || [ $a = "-h" ]
+	then
+		help
+	fi
+done
+
+if [ $# = 0 ]
+then
+	help
+fi
+
+if [ $FFES_DIR = "" ]
+then
+	echo "ERROR:  FFES_DIR must be defined in order to run dat2tex."
+	echo ""
+	echo "  FFES_DIR should be defined as the absolute path to"
+	echo "  the ffes_0.2.1 directory.  For bash shell add:"
+	echo ""
+	echo "        export FFES_DIR=<path>/ffes_0.2.1"
+	echo ""
+	echo "  to your .bashrc file in your home directory and restart"
+	echo "  bash."
+	exit 1
+fi
+
+txl -q -w 255 -I $FFES_DIR/DRACULAE_0.2/src  $1 GetTeX.Txl \
+	- $args | perl -p -e "s/\"//g"

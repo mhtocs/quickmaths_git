@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Simple script to insure that the txl compiler is installed properly.
+
+# NOTE: this assumes txl version 10.3a3; output from txlc/txl may
+#       be different for other versions.  If you have a working `txlc` in 
+#       your search path and this script fails, please ignore the output.
+
+
+echo "Checking TXL installation..."
+
+# For testing (this is intentionally wrong)
+#VERSION_INFO=`mary >& TESTTXL`
+
+# Test that the compiler is installed and in the search path...
+VERSION_INFO=`txlc >& TESTTXL`
+CHECK_USAGE=`grep "Usage:  txlc" TESTTXL`
+rm TESTTXL
+
+if [ "$CHECK_USAGE" == "" ]
+then
+	echo "<ERROR> The TXL compiler (txlc) is either not in your search path,"
+	echo "        or is not installed."
+	echo ""
+	echo "Please alter your PATH variable, or install TXL."
+	echo "NOTE: If installing TXL, we recommend doing so as the root user:"
+	echo "      Make sure that you *login* as the root user;"
+	echo "      *do not* use \"su\" to obtain root privelages."
+	exit 1
+fi
+
+# Test that the compiler actually works.
+echo "    The TXL compiler is installed."
+echo "Testing TXL compiler..."
+COMPILE_TEST=`cd test; txlc test/Test.Txl`
+
+# Test case (this is deliberately wrong)
+#COMPILE_TEST=`ls`
+
+if [ ! -e "test/Test.x" ]
+then
+	echo "<ERROR> The TXL compiler is installed, but is misfunctioning."
+	echo ""
+	echo "One possible cause is that TXL cannot locate its libraries."
+	echo "If this is the problem, we recommend that you either:"
+	echo "  1. Login as the root user and then reinstall TXL (simplest fix in most cases)"
+	echo "     NOTE: *do not* use \"su\"; you must login as root."
+	echo "  2. Move files from the txl10.*/lib directory to the location"
+	echo "     where TXL is searching (e.g. /usr/local/lib/txl/)"
+	exit 2
+fi
+
+# If we get this far, the TXL compiler is working fine.
+# Remove the compiled file.
+rm test/Test.x
+echo "    The TXL compiler (txlc) is properly installed and working."
+echo ""
+exit 0

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# New script to allow .bst output to be read in and the first bst
+# aligned and returned to the output.
+
+function help () {
+	echo "DRACULAE - alignBST (AlignSymbols.Txl)"
+	echo "Copyright (c) 2000,2002 Richard Zanibbi"
+	echo ""
+	echo "Command line options: "
+	echo ""
+	echo "      -help     (show this message)"
+	echo "      -bleft    (input file has origin at bottom left) "
+	echo ""
+	echo "Usage:"
+	echo "    alignBST -help  (to see this message)   OR"
+	echo "    alignBST <.bst file> <Options>"
+	echo ""
+	exit 0
+}
+
+if [ $# = 0 ]
+then
+	help
+fi
+
+args=""
+a=0
+for argument
+do
+	if [ $a != 0 ]
+	then
+		args="$args $argument"
+	fi
+	a=$argument
+	if [ $a = "-help" ] || [ $a = "-h" ]
+	then
+		help
+	fi
+done
+
+
+if [ $FFES_DIR = "" ]
+then
+	echo "ERROR:  FFES_DIR must be defined in order to run alignBST."
+	echo ""
+	echo "  FFES_DIR should be defined as the absolute path to"
+	echo "  the ffes_0.2.1 directory.  For bash shell add:"
+	echo ""
+	echo "        export FFES_DIR=<path>/ffes_0.2.1"
+	echo ""
+	echo "  to your .bashrc file in your home directory and restart"
+	echo "  bash."
+	exit 1
+fi
+
+txl -q -w 255 -I $FFES_DIR/DRACULAE_0.2/src $1 AlignSymbols.Txl - $args 
+

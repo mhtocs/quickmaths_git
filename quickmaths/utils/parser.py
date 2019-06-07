@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from quickmaths.utils.misc import DotDict
+from quickmaths.utils.misc import DotDict, list_splice
 from quickmaths.utils.constants import c, subt, supt, t
 
 
@@ -18,9 +18,10 @@ class BSTNode:
         if not data:
             data = BSTNode.region.EXPRESSION
 
-        if is_region:
+        if is_region or data is BSTNode.region.EXPRESSION:
             self.children = []
             self.parent = None
+            # if region, then data will be in range (0..10)
             self.label = data
             self.symbol_class = None
             self.node = None
@@ -46,6 +47,7 @@ class BSTNode:
             self.width = data.width
             self.height = data.height  # self.max_y - self.min_y
             self.centroid_x = (self.min_x + self.max_x) / 2
+            # self.centroid_y = (self.min_y + self.max_y) / 2
 
             # fix this errors
             if self.label in ['—']:
@@ -78,18 +80,18 @@ class BSTNode:
                 self.centroid_y = self.max_y - self.height * c
                 self.BELOW = self.min_y
                 self.ABOVE = self.max_y
-                self.SUBSC = None
-                self.SUPER = None
+                self.SUBSC = self.max_y - self.height * t
+                self.SUPER = self.max_y - (self.height - self.height * t)
 
             elif self.label in list(map(str, '}])')):
                 self.symbol_class = BSTNode.symbol.CLOSE_BRACKET
-                self.centroid_y = self.max_y - self.min_y / 2
+                self.centroid_y = self.max_y - self.height / 2
                 self.BELOW = self.max_y - self.height * t
                 self.ABOVE = self.max_y - (self.height - self.height * t)
                 self.SUBSC = self.BELOW
                 self.SUPER = self.ABOVE
 
-            elif self.label in list(map(str, '√')):
+            elif self.label in ['√', 'sqrt']:
                 self.symbol_class = BSTNode.symbol.ROOT
                 self.centroid_y = self.max_y - self.height * c
                 self.ABOVE = self.min_y
@@ -99,7 +101,7 @@ class BSTNode:
 
             elif self.label in list(map(str, 'Σ∫Π')):
                 self.symbol_class = BSTNode.symbol.VARIABLE_RANGE
-                self.centroid_y = (self.min_y + self.max_y) / 2
+                self.centroid_y = self.max_y - self.height / 2
 
                 self.BELOW = self.max_y - self.height * t
                 self.ABOVE = self.max_y - (self.height - self.height * t)
@@ -108,7 +110,7 @@ class BSTNode:
 
             else:
                 self.symbol_class = BSTNode.symbol.CENTERED
-                self.centroid_y = (self.min_y + self.max_y) / 2
+                self.centroid_y = self.max_y - self.height / 2
 
                 self.BELOW = self.max_y - self.height * t
                 self.ABOVE = self.max_y - (self.height - self.height * t)
@@ -116,6 +118,7 @@ class BSTNode:
                 self.SUPER = self.ABOVE
 
             # add regions
+            # self.centroid_y = (self.max_y - self.min_y) / 2
             for i in range(len(BSTNode.region)):
                 self.children.append(BSTNode(i, is_region=True))
 
@@ -141,7 +144,6 @@ class BSTNode:
     def determine_position(self, node):
         root = self
         # dy = node.centroid_y - root.centroid_y
-
         if root.symbol_class == BSTNode.symbol.OPEN_BRACKET:
             if root.min_y < node.centroid_y < root.max_y:
                 if node.symbol_class == BSTNode.symbol.CLOSE_BRACKET:
@@ -165,8 +167,39 @@ class BSTNode:
 
         elif node.centroid_x > root.min_x and root.SUBSC is not None and root.SUPER is not None:
             if node.centroid_y > root.SUBSC:
-                return BSTNode.region.SUBSC
+                return BSTNode.region.NULL
             elif node.centroid_y < root.SUPER:
+                return BSTNode.region.SUPER
+
+        return BSTNode.region.NULL
+
+    def determine_position2(self, node):
+        root = self
+        dy = node.centroid_y - root.centroid_y
+        super_threshold = -0.25
+        subs_threshold = 0.25
+        if root.symbol_class == BSTNode.symbol.OPEN_BRACKET:
+            if root.min_y < node.centroid_y < root.max_y:
+                if node.symbol_class == BSTNode.symbol.CLOSE_BRACKET:
+                    root.symbol_class = BSTNode.symbol.BRACKETED
+                return BSTNode.region.CONTAINS
+
+        elif root.overlaps(node):
+            if dy > 0:
+                return BSTNode.region.BELOW
+            else:
+                return BSTNode.region.ABOVE
+
+        elif node.centroid_x < root.min_x:
+            if dy > subs_threshold * root.height:
+                return BSTNode.region.BLEFT
+            elif dy < super_threshold * root.height:
+                return BSTNode.region.TLEFT
+
+        elif node.centroid_x > root.min_x:
+            if dy > subs_threshold * root.height:
+                return BSTNode.region.SUBSC
+            elif dy < super_threshold * root.height:
                 return BSTNode.region.SUPER
 
         return BSTNode.region.NULL
@@ -191,6 +224,7 @@ class BSTNode:
         if self.is_region:
             i = len(self.children) - 1
             while i >= 0 and not self.children[i].insert(node):
+                # print(f'Insertion of {node.label} failed at {self.children[i].label}')
                 i -= 1
             if i < 0:
                 # was not inserted in any child
@@ -201,6 +235,96 @@ class BSTNode:
             return True
         else:
             position = self.determine_position(node)
+            # print('here')
+            if position != BSTNode.region.NULL:
+                self.children[position].insert(node)
+                return True
+
+        return False
+
+    def extend(self, other):
+        if self.is_region and len(self.children) == 0:
+            self.min_x = other.min_x
+            self.max_x = other.max_x
+            self.min_y = other.min_y
+            self.max_y = other.max_y
+        else:
+            if other.min_x < self.min_x:
+                self.min_x = other.min_x
+            if other.max_x > self.max_x:
+                self.max_x = other.max_x
+            if other.min_y < self.min_y:
+                self.min_y = other.min_y
+            if other.max_y > self.max_y:
+                self.max_y = other.max_y
+        # doubt here
+        self.width = self.max_x - self.min_x
+        self.height = self.max_y - self.min_y
+        self.centroid_x = (self.min_x + self.max_x) / 2
+        self.centroid_y = (self.min_y + self.max_y) / 2
+
+    def merge(self, other):
+        if not self.node:
+            print('merge: not node: ' + self)
+        if self.is_symbol and other.is_symbol:
+            self.label += other.label
+            for c_index in range(len(other.children)):
+                region = other.children[c_index]
+                for i in range(len(region.children)):
+                    self.add(c_index, region.children[i])
+        self.extend(other)
+
+    def add(self, position, node):
+        region = None
+        # print('add_called')
+        if self.is_region:
+            region = self
+            i = 0
+            root = None
+            while i < len(region.children):
+                root = region.children[i]
+                if root.min_x > node.centroid_x:
+                    break
+                i += 1
+
+            if node.is_region:
+                children = node.children
+                region.children = region.children[0:i] + \
+                    (list_splice(children, 0, len(children)) + region.children[i:])
+            else:
+                # print('here1')
+                list_splice(region.children, i, 0, node)
+
+            region.extend(node)
+
+        elif self.symbol_class == BSTNode.symbol.CLOSE_BRACKET and self.parent and self.parent.symbol_class == BSTNode.symbol.BRACKETED:
+            self.parent.add(position, node)
+            return
+        else:
+            region = self.children[position]
+            region.add(None, node)
+        node.parent = self
+
+    def __str__(self):
+        string = ""
+        if self.is_region:
+            if len(self.children) > 0:
+                string += BSTNode.region2[self.label]
+                string += "("
+                for i in range(len(self.children)):
+                    if i > 0:
+                        string += ", "
+                    string += str(self.children[i])
+                string += ") "
+        else:
+            string += '[' + self.label + ']'
+            children_text = ''
+            for i in range(len(self.children)):
+                children_text += str(self.children[i])
+            if children_text:
+                string += '{' + children_text + '} '
+        return string
+
     # constants
     region = DotDict({
         "NULL": 0,
@@ -213,8 +337,22 @@ class BSTNode:
         "TLEFT": 7,
         "BLEFT": 8,
         "CONTAINS": 9,
-        "EXPRESSION": 10
+        "EXPRESSION": 10,
     })
+
+    region2 = {
+        0: "NULL",
+        1: "ABOVE",
+        2: "BELOW",
+        3: "SUPER",
+        4: "SUBSC",
+        5: "UPPER",
+        6: "LOWER",
+        7: "TLEFT",
+        8: "BLEFT",
+        9: "CONTAINS",
+        10: "EXPRESSION",
+    }
 
     symbol = DotDict({
         "FRACTION_BAR": 1,
