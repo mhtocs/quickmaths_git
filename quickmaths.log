@@ -3911,3 +3911,282 @@ Use tf.cast instead.
 [01:06:28] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
 [01:06:28] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 371.44
 [01:06:28] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 20.19
+[22:52:10] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[22:52:11] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[22:52:12] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[22:52:16] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[22:52:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[22:52:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 33.96
+[22:52:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 26.68
+[23:01:14] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:01:15] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:01:16] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:01:19] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:03:36] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:03:36] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 137.58
+[23:03:36] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 31.41
+[23:04:16] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:04:17] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:04:18] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:04:21] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:04:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:04:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 29.01
+[23:04:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 33.54
+[23:05:26] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:05:27] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:05:28] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:05:31] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:05:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:05:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 19.45
+[23:05:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 24.12
+[23:06:07] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:06:07] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:06:09] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:06:11] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:06:26] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:06:26] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 14.60
+[23:06:26] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 24.65
+[23:07:14] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:07:14] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:07:16] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:07:19] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:07:41] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:07:41] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 22.57
+[23:07:41] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 29.19
+[23:08:31] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:08:32] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:08:33] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:08:36] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:08:42] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:08:42] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 5.95
+[23:08:42] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 25.04
+[23:09:57] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:09:58] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:09:59] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:10:02] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:10:15] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:10:15] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 13.62
+[23:10:15] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 24.60
+[23:11:24] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:11:24] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:11:25] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:11:28] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:42}     INFO - app started ...
+[23:11:47] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:108}     INFO - exiting ...
+[23:11:47] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:120}     INFO - elapsed time: 19.01
+[23:11:47] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:121}     INFO - approx. FPS: 26.41
+[23:13:31] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:13:31] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:13:32] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:13:35] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:13:54] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:13:54] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:13:56] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:13:58] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:15:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:110}     INFO - exiting ...
+[23:15:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:122}     INFO - elapsed time: 112.02
+[23:15:50] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:123}     INFO - approx. FPS: 26.26
+[23:17:19] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:17:20] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:17:21] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:17:24] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:54:50] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:54:50] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:54:51] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:54:54] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:56:11] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:110}     INFO - exiting ...
+[23:56:11] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:122}     INFO - elapsed time: 76.61
+[23:56:11] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:123}     INFO - approx. FPS: 31.69
+[23:56:34] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:56:35] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:56:36] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:56:39] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:56:47] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:56:48] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:56:49] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:56:52] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:57:46] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:57:47] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:57:48] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:57:51] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[23:58:28] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[23:58:28] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[23:58:30] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[23:58:32] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:00:04] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:00:04] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:00:06] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:00:08] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:01:21] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:01:22] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:01:23] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:01:26] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:01:59] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:01:59] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:02:01] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:02:03] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:03:38] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:03:39] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:03:40] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:03:43] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:04:11] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:04:12] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:04:13] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:04:16] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:04:25] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:111}     INFO - exiting ...
+[00:04:25] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:123}     INFO - elapsed time: 9.67
+[00:04:25] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:124}     INFO - approx. FPS: 19.03
+[00:04:38] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:04:38] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:04:39] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:04:42] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...
+[00:15:20] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:111}     INFO - exiting ...
+[00:15:20] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:123}     INFO - elapsed time: 637.24
+[00:15:20] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:124}     INFO - approx. FPS: 21.27
+[00:15:51] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+[00:15:52] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:506}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+[00:15:53] {/home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/util/deprecation.py:323}     WARNING - From /home/kayshu/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+[00:15:56] {/home/kayshu/OpenCVProjects/Dell Laptop/quickmaths_git/quickmaths/app.py:43}     INFO - app started ...

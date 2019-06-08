@@ -4,8 +4,8 @@ import imutils
 from scipy import ndimage
 
 
-def thresify(gray, dk, ek):
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (21, 21))
+def thresify(gray, dk, ek, bk):
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (bk, bk))
     blackhat = cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, kernel)
 
     _, thresh = cv2.threshold(

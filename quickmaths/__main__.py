@@ -33,6 +33,6 @@ ap.add_argument("-c", "--camera", type=int, default=1,
 args = vars(ap.parse_args())
 
 if args["camera"] == 0:
-    args["camera"] = "http://192.168.43.1:8080/video"
+    args["camera"] = "http://10.42.0.83:8080/video"
 app = App(logger, args["camera"], ROOT_DIR)
 app.run()

@@ -88,7 +88,6 @@ class Predictor:
 
                 # find the text inside the two dollar signs in text
                 output = re.findall('\$(.*?)\$', output, re.DOTALL)
-                print(f'latex is: {output}')
 
                 # if list is not empty
                 if [] != output:
@@ -97,6 +96,7 @@ class Predictor:
                     output = output.replace(' ', '')
                     output = output.replace('\\limits', '')
                     output = output.replace('overline', '')
+                    print(f'latex is: {output}')
 
                     # generate image
 

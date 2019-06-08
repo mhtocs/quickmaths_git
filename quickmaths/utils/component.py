@@ -179,7 +179,7 @@ def connect_cnts2(thresh, im):
             x_max = max(x1 + w1, x2 + w1)
             y_max = max(y1 + h1, y2 + h2)
 
-            cv2.rectangle(im, (x_min, y_min), (x_max, y_max), (255, 0, 0), 1)
+      #      cv2.rectangle(im, (x_min, y_min), (x_max, y_max), (255, 0, 0), 1)
 
             # cv2.imshow('eq_mask', mask)
             digit = mask[y_min - 8:y_max + 8, x_min - 8:x_max + 8]
@@ -203,8 +203,8 @@ def connect_cnts2(thresh, im):
 
             # cv2.imshow('div_mask', mask)
             digit = mask[y_min - 8:y_max + 8, x_min - 8:x_max + 8]
-            cv2.rectangle(im, (x_min - 8, y_min - 8),
-                          (x_max + 8, y_max + 8), (255, 0, 0), 1)
+            # cv2.rectangle(im, (x_min - 8, y_min - 8),
+            #               (x_max + 8, y_max + 8), (255, 0, 0), 1)
 
             digits.append(digit)
             boxes.append(("/", x_min, y_min, x_max, y_max))
@@ -218,7 +218,7 @@ def connect_cnts2(thresh, im):
             digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
             digits.append(digit)
             boxes.append(("", x, y, x + w, y + h))
-            cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
+     #       cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
 
             i += 1
 
@@ -230,7 +230,7 @@ def connect_cnts2(thresh, im):
         digit = mask[y - 8:y + h + 8, x - 8:x + w + 8]
         digits.append(digit)
         boxes.append(("", x, y, x + w, y + h))
-        cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
+    #    cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 1)
 
         i += 1
 

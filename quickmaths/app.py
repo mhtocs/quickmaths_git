@@ -24,6 +24,7 @@ class App:
         cv2.namedWindow("stacked")
         cv2.createTrackbar('dilate kernel', 'roi', 3, 5, self.none)
         cv2.createTrackbar('erode kernel', 'roi', 2, 5, self.none)
+        cv2.createTrackbar('blackhat kernel', 'roi', 21, 30, self.none)
 
         self.mouse = Mouse(window="Webcam")
         self.gt = Graphics()
@@ -63,31 +64,33 @@ class App:
 
                     dk = cv2.getTrackbarPos("dilate kernel", "roi")
                     ek = cv2.getTrackbarPos("erode kernel", "roi")
-                    thresh = im.thresify(gray_roi, dk, ek)
+                    bk = cv2.getTrackbarPos("blackhat kernel", "roi")
+                    thresh = im.thresify(gray_roi, dk, ek, bk)
                     # print(thresh.shape)
 
                     # overlap thresh on original image
                     mod_thres = cv2.bitwise_not(thresh)
-                    orig[p1[1]:p2[1], p1[0]:p2[0]] = cv2.merge((mod_thres, mod_thres, mod_thres))
+                    #orig[p1[1]:p2[1], p1[0]:p2[0]] = cv2.merge((mod_thres, mod_thres, mod_thres))
                     # boxes, digits, cnts = component.get_symbols(
                     #     thresh, im=roi, draw_contours=True)
 
                     digits, boxes = component.connect_cnts2(thresh, roi)
                     stacked_digits, resized_digits = component.stack_digits(digits, im.resize)
-                    # res, latex_image, labels = self.predictor.parse(resized_digits, boxes)
+                    res, latex_image, labels = self.predictor.parse(resized_digits, boxes)
 
                     # annotate symbols
                     # for label, (pre_label, x_min, y_min, x_max, y_max) in zip(labels, boxes):
                     #     self.gt.write(orig, label, (x_min, y_min), self.font_20)
 
-                    res = self.predictor.parsev2(resized_digits, boxes)
+                    # res = self.predictor.parse(resized_digits, boxes)
+                    #print(f"res: {res}")
 
                     self.gt.write(orig, res, (10, wh - wh / 8), self.font_10)
 
                     # self.gt.draw_boxes(orig, boxes, p1, p2)
 
                     # self.hist.draw(gray_roi)
-                    # cv2.imshow('roi', thresh)
+                    cv2.imshow('roi', thresh)
                     cv2.imshow('stacked', stacked_digits)
                     # cv2.imshow('latex_image', latex_image)
 
